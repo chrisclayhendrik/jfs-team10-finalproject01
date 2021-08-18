@@ -22,23 +22,42 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <form>
+                        <form id="newTaskForm">
                             <div class="form-group font-weight-bold">
-                                <label for="taskName">Task Name</label>
-                                <input type="text" class="form-control" id="taskName" aria-describedby="taskNameHelp">
+                                <label for="newTaskNameInput">Task Name</label>
+                                <input type="text" class="form-control" id="newTaskNameInput" aria-describedby="taskNameHelp">
+                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                        <strong>Invalid input!</strong> Please re-enter task name.
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
                             </div>
                                 <div class="form-group font-weight-bold">
-                                    <label for="taskDescription" placeholder="Task Description" >Task Description</label>
-                                    <textarea class="form-control" id="taskDescription" rows="3"></textarea>
+                                    <label for="newwTaskDescriptionInput">Task Description</label>
+                                    <textarea class="form-control" id="newTaskDescriptionInput" rows="3"></textarea>
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <strong>Invalid input!</strong> Please re-enter task description.
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
                                 </div>
                                     <div class="form-group font-weight-bold">
-                                        <label for="assignedTo">Assigned To</label>
-                                        <input type="text" class="form-control" id="assignedTo">
+                                        <label for="newAssignedToInput">Assigned To</label>
+                                        <input type="text" class="form-control" id="newAssignedToInput">
+                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                <strong>Invalid input!</strong> Please re-select user to assign this task.
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
                                     </div>
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-secondary font-weight-bold">ADD TASK</button>
+                                            <button type="submit" class="btn btn-secondary font-weight-bold" data-toggle="button" aria-pressed="false">ADD TASK</button>
                                         </div>
-                        </div>
+                                            
+                    </div>
                     <div class="col-auto">
                             <div class="form-group">
                                     <div class="form-group font-weight-bold">
@@ -120,12 +139,11 @@
                         </div>
                       </div>
                 </div>
-            </div>
-            
-        <script src="" async defer></script>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+            </div> 
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"defer async></script>
 <!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous" defer async></script>
+  <script src="./index.js" defer async></script>
     </body>
 </html>
