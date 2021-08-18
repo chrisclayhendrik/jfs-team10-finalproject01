@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -18,55 +18,57 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
             <div class="container">
-                <div class="jumbotron jumbotron-fluid">
-                    <div class="container">
-                      <h1 class="display-4">Task List</h1>
-                    </div>
+                <div class="jumbotron text-center display-4 font-weight-bold">Task Manager
                 </div>
                 <div class="row">
-                    <form>
-                        <div class="form-group">
-                          <label for="taskName">Task Name</label>
-                          <input type="text" class="form-control" id="taskName" aria-describedby="taskNameHelp">
-                        </div>
-                        <div class="form-group">
-                            <label for="taskDescription" placeholder="Task Description">Task Description</label>
-                            <textarea class="form-control" id="taskDescription" rows="3"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="assignedTo">Assigned To</label>
-                            <input type="text" class="form-control" id="assignedTo">
-                        </div>
-                        <button type="submit" class="btn btn-secondary">ADD TASK</button>
-                    </form>
-                      <div class="form-group">
-                        <div class="dropdown">
-                            <label for="status">Status:</label>
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Please Select
-                                </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item btn btn-danger active" type="button">To Do</button>
-                                <button class="dropdown-item btn btn-warning active" type="button">In Progress</button>
-                                <button class="dropdown-item btn btn-primary active" type="button">Review</button>
-                                <button class="dropdown-item btn btn-success active" type="button">Done</button>
+                    <div class="col">
+                        <form>
+                            <div class="form-group font-weight-bold">
+                                <label for="taskName">Task Name</label>
+                                <input type="text" class="form-control" id="taskName" aria-describedby="taskNameHelp">
                             </div>
+                                <div class="form-group font-weight-bold">
+                                    <label for="taskDescription" placeholder="Task Description" >Task Description</label>
+                                    <textarea class="form-control" id="taskDescription" rows="3"></textarea>
+                                </div>
+                                    <div class="form-group font-weight-bold">
+                                        <label for="assignedTo">Assigned To</label>
+                                        <input type="text" class="form-control" id="assignedTo">
+                                    </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-secondary font-weight-bold">ADD TASK</button>
+                                        </div>
                         </div>
-                        <div class="form-group">
-                            <label for="dueDate">Due Date:</label>
-                            <input type="date" id="dueDate" name="dueDate">
-                        </div>
+                    <div class="col-auto">
+                            <div class="form-group">
+                                    <div class="form-group font-weight-bold">
+                                        <label for="dueDate">Due Date:</label>
+                                        <input type="date" id="dueDate" name="dueDate">
+                                    </div><br><br>   
+                                <div class="dropdown font-weight-bold">
+                                    <label for="status">Status:</label>
+                                    <button class="btn btn-secondary dropdown-toggle font-weight-bold" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Please Select</button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                        <button class="dropdown-item btn btn-danger active font-weight-bold" type="button">To Do</button>
+                                        <button class="dropdown-item btn btn-warning active font-weight-bold" type="button">In Progress</button>
+                                        <button class="dropdown-item btn btn-primary active font-weight-bold" type="button">Review</button>
+                                        <button class="dropdown-item btn btn-success active font-weight-bold" type="button">Done</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="container">
-                <div class="jumbotron jumbotron-fluid">
+                <div class="jumbotron">
                     <div class="container">
-                      <h1 class="display-4">Tasks</h1>
+                      <h1 class="display-4 text-center font-weight-bold">Tasks</h1>
                     </div>
                   </div>
-                <div class="row">
+                <div class="row justify-content-center">
                     <div class="card-group">
-                        <div class="card">
+                        <div class="card mr-4">
                           <div class="card-body">
                             <button type="button" class="btn btn-success">Status</button>
                             <h5 class="card-title">Task Name</h5>
@@ -76,7 +78,7 @@
                             <h5 class="card-title">Status</h5>
                           </div>
                         </div>
-                        <div class="card">
+                        <div class="card mr-4">
                             <div class="card-body">
                                 <button type="button" class="btn btn-success">Status</button>
                                 <h5 class="card-title">Task Name</h5>
@@ -86,7 +88,27 @@
                                 <h5 class="card-title">Status</h5>
                               </div>
                         </div>
-                        <div class="card">
+                        <div class="card mr-4">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-success">Status</button>
+                                <h5 class="card-title">Task Name</h5>
+                                <h5 class="card-title">Task Description</h5>
+                                <h5 class="card-title">Assigned To</h5>
+                                <h5 class="card-title">Due Date</h5>
+                                <h5 class="card-title">Status</h5>
+                              </div>
+                        </div>
+                        <div class="card mr-4">
+                            <div class="card-body">
+                                <button type="button" class="btn btn-success">Status</button>
+                                <h5 class="card-title">Task Name</h5>
+                                <h5 class="card-title">Task Description</h5>
+                                <h5 class="card-title">Assigned To</h5>
+                                <h5 class="card-title">Due Date</h5>
+                                <h5 class="card-title">Status</h5>
+                              </div>
+                        </div>
+                        <div class="card mr-4">
                             <div class="card-body">
                                 <button type="button" class="btn btn-success">Status</button>
                                 <h5 class="card-title">Task Name</h5>
