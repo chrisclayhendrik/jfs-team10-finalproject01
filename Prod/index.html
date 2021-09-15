@@ -4,146 +4,133 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Task Manager</title>
-        <meta name="description" content="A Simple Task Manager">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Task Manager</title>
+    <meta name="description" content="A Simple Task Manager">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-            <div class="container">
-                <div class="jumbotron text-center display-4 font-weight-bold">Task Manager
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <form id="newTaskForm">
-                            <div class="form-group font-weight-bold">
-                                <label for="newTaskNameInput">Task Name</label>
-                                <input type="text" class="form-control" id="newTaskNameInput" aria-describedby="taskNameHelp">
-                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                        <strong>Invalid input!</strong> Please re-enter task name.
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                            </div>
-                                <div class="form-group font-weight-bold">
-                                    <label for="newwTaskDescriptionInput">Task Description</label>
-                                    <textarea class="form-control" id="newTaskDescriptionInput" rows="3"></textarea>
-                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                            <strong>Invalid input!</strong> Please re-enter task description.
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                </div>
-                                    <div class="form-group font-weight-bold">
-                                        <label for="newAssignedToInput">Assigned To</label>
-                                        <input type="text" class="form-control" id="newAssignedToInput">
-                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                                <strong>Invalid input!</strong> Please re-select user to assign this task.
-                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                    </div>
-                                        <div class="form-group">
-                                            <button type="submit" class="btn btn-secondary font-weight-bold" data-toggle="button" aria-pressed="false">ADD TASK</button>
-                                        </div>
-                                            
+    <div class="container-fluid">
+        <div class="display-4 jumbotron bg-secondary text-white">
+            Task Manager
+        </div>
+        <br><br>
+        <form id="inputForm">
+            <div class="form-row">
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="taskName">Task Name</label>
+                        <input type="text" class="form-control" id="newTaskNameInput" required>
+
                     </div>
-                    <div class="col-auto">
-                            <div class="form-group">
-                                    <div class="form-group font-weight-bold">
-                                        <label for="dueDate">Due Date:</label>
-                                        <input type="date" id="dueDate" name="dueDate">
-                                    </div><br><br>   
-                                <div class="dropdown font-weight-bold">
-                                    <label for="status">Status:</label>
-                                    <button class="btn btn-secondary dropdown-toggle font-weight-bold" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Please Select</button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                        <button class="dropdown-item btn btn-danger active font-weight-bold" type="button">To Do</button>
-                                        <button class="dropdown-item btn btn-warning active font-weight-bold" type="button">In Progress</button>
-                                        <button class="dropdown-item btn btn-primary active font-weight-bold" type="button">Review</button>
-                                        <button class="dropdown-item btn btn-success active font-weight-bold" type="button">Done</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                </div>
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="taskDescription">Task Description</label>
+                        <input type="text" class="form-control" id="newTaskDescriptionInput" required>
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="jumbotron">
-                    <div class="container">
-                      <h1 class="display-4 text-center font-weight-bold">Tasks</h1>
+            <div class="form-row">
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="assignedTo">Assigned To</label>
+                        <select form="inputForm" name="Assigned To" id="newAssignedToInput" class="form-control"
+                            required>
+                            <option value="" selected>Choose...</option>
+                            <option value="Chris Hendrik">Chris Hendrik</option>
+                            <option value="Madhu Anam">Madhu Anam</option>
+                            <option value="Azmuddin Zafari">Azmuddin Zafari</option>
+                        </select>
                     </div>
-                  </div>
-                <div class="row justify-content-center">
-                    <div class="card-group">
-                        <div class="card mr-4">
-                          <div class="card-body">
-                            <button type="button" class="btn btn-success">Status</button>
-                            <h5 class="card-title">Task Name</h5>
-                            <h5 class="card-title">Task Description</h5>
-                            <h5 class="card-title">Assigned To</h5>
-                            <h5 class="card-title">Due Date</h5>
-                            <h5 class="card-title">Status</h5>
-                          </div>
-                        </div>
-                        <div class="card mr-4">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-success">Status</button>
-                                <h5 class="card-title">Task Name</h5>
-                                <h5 class="card-title">Task Description</h5>
-                                <h5 class="card-title">Assigned To</h5>
-                                <h5 class="card-title">Due Date</h5>
-                                <h5 class="card-title">Status</h5>
-                              </div>
-                        </div>
-                        <div class="card mr-4">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-success">Status</button>
-                                <h5 class="card-title">Task Name</h5>
-                                <h5 class="card-title">Task Description</h5>
-                                <h5 class="card-title">Assigned To</h5>
-                                <h5 class="card-title">Due Date</h5>
-                                <h5 class="card-title">Status</h5>
-                              </div>
-                        </div>
-                        <div class="card mr-4">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-success">Status</button>
-                                <h5 class="card-title">Task Name</h5>
-                                <h5 class="card-title">Task Description</h5>
-                                <h5 class="card-title">Assigned To</h5>
-                                <h5 class="card-title">Due Date</h5>
-                                <h5 class="card-title">Status</h5>
-                              </div>
-                        </div>
-                        <div class="card mr-4">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-success">Status</button>
-                                <h5 class="card-title">Task Name</h5>
-                                <h5 class="card-title">Task Description</h5>
-                                <h5 class="card-title">Assigned To</h5>
-                                <h5 class="card-title">Due Date</h5>
-                                <h5 class="card-title">Status</h5>
-                              </div>
-                        </div>
-                      </div>
                 </div>
-            </div> 
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous" defer async></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"defer async></script>
-<!-- Always remember to call the above files first before calling the bootstrap.min.js file -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous" defer async></script>
-  <script src="./js/index.js" defer async></script>
-    </body>
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" class="form-control" id="newDueDateInput" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select form="inputForm" name="Status" id="newStatusInput" class="form-control" required>
+                            <option value="" selected>Choose...</option>
+                            <option value="To Do">To Do</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Review">Review</option>
+                            <option value="Done">Done</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-col-6">
+                <button id="newTaskButton" type="submit" class="form-group btn btn-secondary">Add New Task</button>
+            </div>
+
+    </div>
+    </form>
+    </div>
+    <br><br>
+    <div class="container-fluid">
+        <div class="jumbotron display-4 bg-secondary text-white">
+            Task List
+        </div>
+        <br><br>
+        <div class="row justify-content-center">
+            <ul class="list-group list-group-horizontal" id="tasksList">
+                <div class="col">
+                    <li class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Task Name</h5>
+                                <p class="card-text">Task Description</p>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Assigned To</li>
+                                <li class="list-group-item">Due Date</li>
+                                <li class="list-group-item">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                                            Status
+                                        </button>
+                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <li><button class="btn btn-success dropdown-item"
+                                                    type="button">Action</button></li>
+                                            <li><button class="dropdown-item" type="button">Another action</button></li>
+                                            <li><button class="dropdown-item" type="button">Something else here</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <script src="js/taskManager.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
 </html>
