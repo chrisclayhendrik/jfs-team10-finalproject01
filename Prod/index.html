@@ -25,59 +25,70 @@
             Task Manager
         </div>
         <br><br>
-        <form class="row g-3" id="inputForm">
-            <div class="col-md-4">
-                <label for="newTaskNameInput" class="form-label">Task Name</label>
-                <input type="text" class="form-control" id="newTaskNameInput" placeholder="Task Name" required>
+        <form id="inputForm">
+            <div class="form-row">
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="taskName">Task Name</label>
+                        <input type="text" class="form-control" id="newTaskNameInput" required>
+
+                    </div>
+                </div>
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="taskDescription">Task Description</label>
+                        <input type="text" class="form-control" id="newTaskDescriptionInput" required>
+                    </div>
+                </div>
             </div>
-            <br><br>
-            <div class="col-md-4">
-                <label for="newTaskDescriptionInput" class="form-label">Task Description</label>
-                <input type="text" class="form-control" id="newTaskDescriptionInput" placeholder="Task Description"
-                required>
+            <div class="form-row">
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="assignedTo">Assigned To</label>
+                        <select name="Assigned To" id="newAssignedToInput" class="form-control" required>
+                            <option value="" selected>Choose...</option>
+                            <option value="Chris Hendrik">Chris Hendrik</option>
+                            <option value="Madhu Anam">Madhu Anam</option>
+                            <option value="Azmuddin Zafari">Azmuddin Zafari</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" class="form-control" id="newDueDateInput" required>
+                    </div>
+                </div>
             </div>
-            <br><br>
-            <div class="col-md-4">
-                <label for="newAssignedToInput" class="form-label">Assigned To</label>
-                <select class="form-select" id="newAssignedToInput" required>
-                    <option selected disabled value="">Assigned To</option>
-                    <option>Chris Hendrik</option>
-                    <option>Madhu Anam</option>
-                    <option>Azmuddin Zafari</option>
-                </select>
+            <div class="form-row">
+                <div class="form-col-6">
+                    <div class="form-group">
+                        <label for="status">Status</label>
+                        <select name="Status" id="newStatusInput" class="form-control" required>
+                            <option value="" selected>Choose...</option>
+                            <option value="To Do">To Do</option>
+                            <option value="In Progress">In Progress</option>
+                            <option value="Review">Review</option>
+                            <option value="Done">Done</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            <br><br>
-            <div class="col-md-6">
-                <label for="newDueDateInput" class="form-label">Due Date</label>
-                <br>
-                <input type="date" class="form-control" id="newDueDateInput" required>
+            <div class="form-col-6">
+                <button id="newTaskButton" type="submit" class="form-group btn btn-secondary">Add New Task</button>
             </div>
-            <br><br>
-            <div class="col-md-3">
-                <label for="newStatusInput" class="form-label">Status</label>
-                <select class="form-select" id="newStatusInput" required>
-                    <option class="bg-secondary text-white">Choose...</option>
-                    <option class="bg-danger text-white">To Do</option>
-                    <option class="bg-warning text-white">In Progress</option>
-                    <option class="bg-primary text-white">Review</option>
-                    <option class="bg-success text-white">Done</option>
-                </select>
-            </div>
-            <br><br>
-            <div class="col-12">
-                <button class="btn btn-secondary" type="submit" id="newTaskButton" form="inputForm">Add New
-                    Task</button>
-            </div>
-        </form>
+
+    </div>
+    </form>
     </div>
     <br><br>
     <div class="container-fluid">
         <div class="jumbotron display-4 bg-secondary text-white">
-            Active Tasks
+            Task List
         </div>
         <br><br>
         <div class="row justify-content-center">
-            <ul class="list-group list-group-horizontal">
+            <ul class="list-group list-group-horizontal" id="tasksList">
                 <div class="col">
                     <li class="list-group-item">
                         <div class="card">
@@ -97,120 +108,6 @@
                                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                             <li><button class="btn btn-success dropdown-item"
                                                     type="button">Action</button></li>
-                                            <li><button class="dropdown-item" type="button">Another action</button></li>
-                                            <li><button class="dropdown-item" type="button">Something else here</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-                <div class="col">
-                    <li class="list-group-item">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Task Name</h5>
-                                <p class="card-text">Task Description</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Assigned To</li>
-                                <li class="list-group-item">Due Date</li>
-                                <li class="list-group-item">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <li><button class="dropdown-item" type="button">Action</button></li>
-                                            <li><button class="dropdown-item" type="button">Another action</button></li>
-                                            <li><button class="dropdown-item" type="button">Something else here</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-                <div class="col">
-                    <li class="list-group-item">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Task Name</h5>
-                                <p class="card-text">Task Description</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Assigned To</li>
-                                <li class="list-group-item">Due Date</li>
-                                <li class="list-group-item">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <li><button class="dropdown-item" type="button">Action</button></li>
-                                            <li><button class="dropdown-item" type="button">Another action</button></li>
-                                            <li><button class="dropdown-item" type="button">Something else here</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-                <div class="col">
-                    <li class="list-group-item">
-                        <div class="card">
-
-                            <div class="card-body">
-                                <h5 class="card-title">Task Name</h5>
-                                <p class="card-text">Task Description</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Assigned To</li>
-                                <li class="list-group-item">Due Date</li>
-                                <li class="list-group-item">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <li><button class="dropdown-item" type="button">Action</button></li>
-                                            <li><button class="dropdown-item" type="button">Another action</button></li>
-                                            <li><button class="dropdown-item" type="button">Something else here</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-                <div class="col">
-                    <li class="list-group-item">
-                        <div class="card">
-
-                            <div class="card-body">
-                                <h5 class="card-title">Task Name</h5>
-                                <p class="card-text">Task Description</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Assigned To</li>
-                                <li class="list-group-item">Due Date</li>
-                                <li class="list-group-item">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <li><button class="dropdown-item" type="button">Action</button></li>
                                             <li><button class="dropdown-item" type="button">Another action</button></li>
                                             <li><button class="dropdown-item" type="button">Something else here</button>
                                             </li>
