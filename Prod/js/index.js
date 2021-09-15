@@ -21,9 +21,9 @@ function validFormFieldInput(data) {
     const newStatus = document.querySelector("#newStatusInput");
     const status = newStatus.value;
     console.log('status: ' + status);
-   
+
     taskManager.addTask(name, description, assignedTo, dueDate, status);
-    
+
 
 };
 
@@ -31,6 +31,6 @@ document.querySelector('#inputForm').addEventListener("submit", (event) => {
     event.preventDefault();
     validFormFieldInput();
     document.querySelector('#inputForm').reset();
-      
+
 });
 console.log(taskManager.tasks);
