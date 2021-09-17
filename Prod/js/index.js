@@ -40,6 +40,7 @@ let initializePage = true ;
 const tm = new TaskManager();
 console.log(tm.tasks);
 console.log(tm.currentId);
+
 //tm.addTask('Take out the Trash','Take out the trash in front of the house','Nick','2020-01-12');
 //tm.addTask('Cook Dinner','Prepare a healthy serving of pancakes for the family tonight','Nick','2020-09-20');
 
@@ -114,6 +115,7 @@ function validFormFieldInput(){
 		statusAlert.style.display = 'none';
 	}
 	return allDataValid;
+	
 };
 
 function clearFields() {
@@ -139,7 +141,7 @@ function addTaskInformation() {
 		tm.addTask(taskNameVal,taskDescVal,assignedToVal,dueDateVal,statusVal);
 		console.log(tm.tasks);
 		console.log(tm.currentId);
-
+		tm.save();
 		tm.render();
 	}
 }
@@ -157,8 +159,11 @@ function initialize(){
 	if(initializePage){
 		hideAlert();
 		initializePage = false;
+		
 	}
-}
+	tm.load();
+		tm.render();
+}	
 
 //addTaskBtn.onclick = addTaskInformation;
 addTaskBtn.addEventListener('click',addTaskInformation);
@@ -180,6 +185,7 @@ taskListGroupElem.addEventListener('click',(event)=> {
                 foundTask.status = 'Done';
 
 		//Rerender the page
+		tm.save();
 		tm.render();
 	}	
 });
