@@ -30,42 +30,53 @@
                 <div class="form-col-6">
                     <div class="form-group">
                         <label for="taskName">Task Name</label>
-                        <input type="text" class="form-control" id="newTaskNameInput" required>
+                        <input type="text" class="form-control" id="taskName">
 
                     </div>
+		    <div id="taskNameAlert" class="alert alert-danger" role="alert">
+			      Task Name is required
+		    </div>
                 </div>
                 <div class="form-col-6">
                     <div class="form-group">
-                        <label for="taskDescription">Task Description</label>
-                        <input type="text" class="form-control" id="newTaskDescriptionInput" required>
+                        <label for="taskDesc">Task Description</label>
+                        <input type="text" class="form-control" id="taskDesc">
                     </div>
+		    <div id="taskDescAlert" class="alert alert-danger" role="alert">
+			      Task Description is required
+		    </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-col-6">
                     <div class="form-group">
                         <label for="assignedTo">Assigned To</label>
-                        <select form="inputForm" name="Assigned To" id="newAssignedToInput" class="form-control"
-                            required>
+                        <select form="inputForm" name="Assigned To" id="assignedTo" class="form-control">
                             <option value="" selected>Choose...</option>
                             <option value="Chris Hendrik">Chris Hendrik</option>
                             <option value="Madhu Anam">Madhu Anam</option>
                             <option value="Azmuddin Zafari">Azmuddin Zafari</option>
                         </select>
                     </div>
+		    <div id="assignedToAlert" class="alert alert-danger" role="alert">
+			      Assigned To is required
+		    </div>
                 </div>
                 <div class="form-col-6">
                     <div class="form-group">
                         <label for="dueDate">Due Date</label>
-                        <input type="date" class="form-control" id="newDueDateInput" required>
+                        <input type="date" class="form-control" id="dueDate">
                     </div>
+		    <div id="dueDateAlert" class="alert alert-danger" role="alert">
+			      Due Date is required
+		    </div>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-col-6">
                     <div class="form-group">
                         <label for="status">Status</label>
-                        <select form="inputForm" name="Status" id="newStatusInput" class="form-control" required>
+                        <select form="inputForm" name="Status" id="status" class="form-control">
                             <option value="" selected>Choose...</option>
                             <option value="To Do">To Do</option>
                             <option value="In Progress">In Progress</option>
@@ -73,54 +84,100 @@
                             <option value="Done">Done</option>
                         </select>
                     </div>
+		    <div id="statusAlert" class="alert alert-danger" role="alert">
+			      Status is required
+		    </div>
                 </div>
             </div>
             <div class="form-col-6">
-                <button id="newTaskButton" type="submit" class="form-group btn btn-secondary">Add New Task</button>
+                <button id="addTaskBtn" type="button" class="form-group btn btn-secondary">Add New Task</button>
             </div>
 
     </div>
-    </form>
-    </div>
     <br><br>
-    <div class="container-fluid">
-        <div class="jumbotron display-4 bg-secondary text-white">
-            Task List
+        <div class="row mt-4">
+              <div class="col-1">
+              </div> 
+              <div class="col-5">
+                      <h2 class="font-weight-bold">Tasks</h2>
+              </div> 
+         </div> 
+
+	<ul class="list-group">
+        <div class="row mt-4 mb-3" id="taskListGroupId">
+	      <li class="list-group-item">	
+              <div class="col pl-40">
+                        <div class="card border-primary">
+                                <div class="card-body">
+                                        <h4 class="card-title">TaskName1</h4>
+                                        <p class="card-text">Task Description1</p>
+                                        <p class="card-text">AssignedTo</p>
+                                        <p class="card-text">DueDate</p>
+                                        <p class="card-text">Status</p>
+					<input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
+                                </div>
+                        </div>      
+              </div> 
+	      </li>
+	      <li class="list-group-item">	
+              <div class="col pl-40">
+                        <div class="card border-primary">
+                                <div class="card-body" id="1">
+                                        <h4 class="card-title">TaskName1</h4>
+                                        <p class="card-text">Task Description1</p>
+                                        <p class="card-text">AssignedTo</p>
+                                        <p class="card-text">DueDate</p>
+                                        <p class="card-text">Status</p>
+					<input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
+                                </div>
+                        </div>      
+              </div> 
+	      </li>
+	      <li class="list-group-item">	
+              <div class="col pl-40">
+                        <div class="card border-primary">
+                                <div class="card-body" id="2">
+                                        <h4 class="card-title">TaskName1</h4>
+                                        <p class="card-text">Task Description1</p>
+                                        <p class="card-text">AssignedTo</p>
+                                        <p class="card-text">DueDate</p>
+                                        <p class="card-text">Status</p>
+					<input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
+                                </div>
+                        </div>      
+              </div> 
+	      </li>
+	      <li class="list-group-item">	
+              <div class="col pl-40">
+                        <div class="card border-primary">
+                                <div class="card-body" id="3">
+                                        <h4 class="card-title">TaskName1</h4>
+                                        <p class="card-text">Task Description1</p>
+                                        <p class="card-text">AssignedTo</p>
+                                        <p class="card-text">DueDate</p>
+                                        <p class="card-text">Status</p>
+					<input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
+                                </div>
+                        </div>      
+              </div> 
+	      </li>
+	      <li class="list-group-item">	
+              <div class="col pl-40">
+                        <div class="card border-primary">
+                                <div class="card-body" id="4">
+                                        <h4 class="card-title">TaskName1</h4>
+                                        <p class="card-text">Task Description1</p>
+                                        <p class="card-text">AssignedTo</p>
+                                        <p class="card-text">DueDate</p>
+                                        <p class="card-text">Status</p>
+					<input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
+                                </div>
+                        </div>      
+              </div> 
+	      </li>
         </div>
-        <br><br>
-        <div class="row justify-content-center">
-            <ul class="list-group list-group-horizontal" id="tasksList">
-                <div class="col">
-                    <li class="list-group-item">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Task Name</h5>
-                                <p class="card-text">Task Description</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Assigned To</li>
-                                <li class="list-group-item">Due Date</li>
-                                <li class="list-group-item">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Status
-                                        </button>
-                                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                            <li><button class="btn btn-success dropdown-item"
-                                                    type="button">Action</button></li>
-                                            <li><button class="dropdown-item" type="button">Another action</button></li>
-                                            <li><button class="dropdown-item" type="button">Something else here</button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </div>
-            </ul>
-        </div>
+        </ul>
+    </form>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
