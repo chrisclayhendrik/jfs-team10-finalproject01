@@ -40,7 +40,6 @@ let initializePage = true ;
 const tm = new TaskManager();
 console.log(tm.tasks);
 console.log(tm.currentId);
-
 //tm.addTask('Take out the Trash','Take out the trash in front of the house','Nick','2020-01-12');
 //tm.addTask('Cook Dinner','Prepare a healthy serving of pancakes for the family tonight','Nick','2020-09-20');
 
@@ -115,7 +114,6 @@ function validFormFieldInput(){
 		statusAlert.style.display = 'none';
 	}
 	return allDataValid;
-	
 };
 
 function clearFields() {
@@ -138,11 +136,15 @@ function addTaskInformation() {
 		//Clear the field values
 		clearFields();
 		//Add the field values to task
+		console.log(tm.tasks);
 		tm.addTask(taskNameVal,taskDescVal,assignedToVal,dueDateVal,statusVal);
 		console.log(tm.tasks);
 		console.log(tm.currentId);
-		tm.save();
+
+		//Rerender the page
 		tm.render();
+		//Update Local storage
+		tm.save();
 	}
 }
 
@@ -157,13 +159,15 @@ function hideAlert(){
 
 function initialize(){
 	if(initializePage){
+		//Hide the alerts
 		hideAlert();
-		initializePage = false;
-		
-	}
-	tm.load();
+		//Load the stored tasks into objects
+		tm.load();
+		//Render the tasks
 		tm.render();
-}	
+		initializePage = false;
+	}
+}
 
 //addTaskBtn.onclick = addTaskInformation;
 addTaskBtn.addEventListener('click',addTaskInformation);
@@ -174,8 +178,10 @@ initialize();
 
 //taskHtml = createTaskHtml('TaskTest','Descr','Nick1','10/20/2020','TODO');
 //console.log(taskHtml);
+//HANDLE ACTIONS IN TASK LIST
 let taskListGroupElem = document.getElementById('taskListGroupId');
 taskListGroupElem.addEventListener('click',(event)=> {
+//HANDLE MARK AS DONE
 	if(event.target.id === "markDoneBtn"){
 		//alert(event.target.id);
 		//alert(event.target.parentElement.id);
@@ -185,7 +191,20 @@ taskListGroupElem.addEventListener('click',(event)=> {
                 foundTask.status = 'Done';
 
 		//Rerender the page
-		tm.save();
 		tm.render();
+		//Update Local storage
+		tm.save();
 	}	
+
+//HANDLE DELETE TASK
+	if(event.target.id === "deleteTaskBtn"){
+		//alert(event.target.id);
+		//alert(event.target.parentElement.id);
+		tm.deleteTask(event.target.parentElement.id);
+
+		//Rerender the page
+		tm.render();
+		//Update Local storage
+		tm.save();
+	}
 });
