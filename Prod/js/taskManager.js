@@ -28,6 +28,7 @@ const createTaskHtml = (id,name,desc,assignedTo,dueDate,status) => {
                                         <p class="card-text">${dueDate}</p>
                                         <p class="card-text">${status}</p>
 				        <input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
+				        <input type="button" id="deleteTaskBtn" class="delete-button" value="Delete">	
                                 </div>
                         </div>      
               </div> 
@@ -53,7 +54,7 @@ class TaskManager {
 class TaskManager {
 	constructor(){
   	this._currentId = 0;
-		this._tasks = [];
+	this._tasks = [];
 	}
   get currentId(){
   	return this._currentId;
@@ -66,6 +67,8 @@ class TaskManager {
   }
   addTask(name,description,assignedTo,dueDate,status){
   	const cid = this.currentId;
+       console.log('Id is ' + cid);
+       console.log('name is ' + name);
   	let task = {
     	id:cid,
       name:name,
@@ -75,6 +78,8 @@ class TaskManager {
       status:status //'TODO'
 	};
     //let task = [10];
+    console.log('Tasks is ' + this._tasks);
+    console.log('Task is ' + task);
     this._tasks.push(task);
     this.currentId += 1;
   }
@@ -82,6 +87,10 @@ class TaskManager {
   render(){
 	  let tasksHTMLList = [];
 	  let taskHTML ;
+	  if(this._tasks === null) {
+		  //alert('Empty tasks');
+		  return;
+	  }
 	  this._tasks.forEach(function(task) {
 		//date = new Date(task[dueDate]);
 		//formattedDate = 
@@ -111,20 +120,41 @@ class TaskManager {
 	  return foundTask;
   }
 
-  save() {
-    let tasksJson = JSON.stringify(this._tasks);
-    localStorage.setItem('tasks', tasksJson);
+  save(){
+	  const tasksJSON = JSON.stringify(this._tasks);
+	  localStorage.setItem("tasks",tasksJSON);
 
-    let currentId = JSON.stringify(this._currentId);
-    localStorage.setItem('currentId', currentId);
-  };
+	  const currentId = JSON.stringify(this._currentId);
+	  localStorage.setItem("currentId",currentId);
+  }
 
-  load() {
-    const tasksJson = localStorage.getItem('tasks');
-    this._tasks = JSON.parse(tasksJson);
-    const currentId = localStorage.getItem('currentId');
-    this._currentId = Number(currentId);
-  };
+  load(){
+	  let tasksJson = localStorage.getItem("tasks");
+	  
+	  if(tasksJson != null){
+		  //alert('Storage Tasks JSON is ' + tasksJson);
+		  this._tasks = JSON.parse(tasksJson);
+	  }
+
+	  let currentId = localStorage.getItem("currentId");
+	  if(currentId != null){
+		  //alert('Storage Current Id is ' + currentId);
+		  this._currentId = Number(currentId);
+	  }
+  }
+
+  deleteTask(taskId) {
+	  const newTasks = [];
+	  this._tasks.forEach(function(task) {
+		  if(task.id != taskId){
+			  newTasks.push(task);
+		  }
+	  });
+
+	  this._tasks = newTasks;
+
+  }
+
 
 } //end class TaskManager
 
