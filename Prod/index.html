@@ -21,7 +21,7 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
     <div class="container-fluid">
-        <div class="display-4 jumbotron bg-secondary text-white">
+        <div class="display-4 jumbotron bg-secondary text-white rounded">
             Task Manager
         </div>
         <br><br>
@@ -33,16 +33,23 @@
                         <input type="text" class="form-control" id="taskName">
 
                    </div>
-		    <div id="taskNameAlert" class="alert alert-danger" role="alert">
+		    <div id="taskNameAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
 			      Task Name is required
 		    </div>
                 </div>
                 <div class="form-col-6">
                     <div class="form-group">
                         <label for="taskDesc">Task Description</label>
-                        <input type="text" class="form-control" id="taskDesc">
+                        
+                        <input type="text-area" class="form-control" id="taskDesc">
                     </div>
-		    <div id="taskDescAlert" class="alert alert-danger" role="alert">
+		    <div id="taskDescAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
 			      Task Description is required
 		    </div>
                 </div>
@@ -58,7 +65,10 @@
                             <option value="Azmuddin Zafari">Azmuddin Zafari</option>
                         </select>
                     </div>
-		    <div id="assignedToAlert" class="alert alert-danger" role="alert">
+		    <div id="assignedToAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
 			      Assigned To is required
 		    </div>
                 </div>
@@ -67,7 +77,10 @@
                         <label for="dueDate">Due Date</label>
                         <input type="date" class="form-control" id="dueDate">
                     </div>
-		    <div id="dueDateAlert" class="alert alert-danger" role="alert">
+		    <div id="dueDateAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
 			      Due Date is required
 		    </div>
                 </div>
@@ -84,7 +97,10 @@
                             <option value="Done">Done</option>
                         </select>
                     </div>
-		    <div id="statusAlert" class="alert alert-danger" role="alert">
+		    <div id="statusAlert" class="alert alert-warning alert-dismissible fade show" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
 			      Status is required
 		    </div>
                 </div>
@@ -95,17 +111,13 @@
 
     </div>
     <br><br>
-        <div class="row mt-4">
-              <div class="col-1">
-              </div> 
-              <div class="col-5">
-                      <h2 class="font-weight-bold">Tasks</h2>
-              </div> 
-         </div> 
+    <div class="container-fluid">
+        <div class="display-4 jumbotron bg-secondary text-white rounded">Tasks
+        </div>
 
 	<ul class="list-group">
-        <div class="row mt-4 mb-3" id="taskListGroupId">
-	      <li class="list-group-item">	
+        <div class="row mt-4 mb-3 rounded" id="taskListGroupId">
+	     <!--- <li class="list-group-item">	
               <div class="col pl-40">
                         <div class="card border-primary">
                                 <div class="card-body">
@@ -174,10 +186,10 @@
                                 </div>
                         </div>      
               </div> 
-	      </li>
+	      </li>-->
         </div>
         </ul>
-    </form>
+    
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

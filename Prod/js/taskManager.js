@@ -20,15 +20,15 @@ const createTaskHtml = (id,name,desc,assignedTo,dueDate,status) => {
 	const html = `
 		      <li class="list-group-item">	
               <div class="col pl-40">
-                        <div class="card border-primary">
-                                <div class="card-body" id="${id}">
+                        <div class="card border-secondary rounded">
+                                <div class="card-body rounded" id="${id}">
                                         <h4 class="card-title">${name}</h4>
                                         <p class="card-text">${desc}</p>
                                         <p class="card-text">${assignedTo}</p>
                                         <p class="card-text">${dueDate}</p>
                                         <p class="card-text">${status}</p>
-				        <input type="button" id="markDoneBtn" class="done-button" value="Mark Done">
-				        <input type="button" id="deleteTaskBtn" class="delete-button" value="Delete">	
+				        <button type="button" id="markDoneBtn" class="done-button btn btn-success" value="Mark Done">Mark Done</button>
+				        <button type="button" id="deleteTaskBtn" class="delete-button btn btn-danger" value="Delete">Delete</button>	
                                 </div>
                         </div>      
               </div> 
