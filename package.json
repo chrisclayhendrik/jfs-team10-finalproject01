@@ -1,0 +1,25 @@
+{
+  "name": "jfs-team10-finalproject01",
+  "version": "1.0.0",
+  "description": "**General Objectives**",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisclayhendrik/jfs-team10-finalproject01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrisclayhendrik/jfs-team10-finalproject01/issues"
+  },
+  "homepage": "https://github.com/chrisclayhendrik/jfs-team10-finalproject01#readme",
+  "devDependencies": {
+    "mocha": "^9.1.1"
+  }
+}
