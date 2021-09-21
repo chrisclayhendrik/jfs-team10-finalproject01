@@ -2,7 +2,8 @@
   "name": "jfs-team10-finalproject01",
   "version": "1.0.0",
   "description": "**General Objectives**",
-  "main": "index.js",
+  "type": "module",
+  "main": "test.js",
   "directories": {
     "test": "test"
   },
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/chrisclayhendrik/jfs-team10-finalproject01#readme",
   "devDependencies": {
+    "chai": "^4.3.4",
     "mocha": "^9.1.1"
   }
 }
