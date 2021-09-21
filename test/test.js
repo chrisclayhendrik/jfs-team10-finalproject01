@@ -1,40 +1,62 @@
-const assert = require('assert');
-const process = require('process');
-const TaskManager = require('../Prod/js/taskManager.js');
-const addTask = TaskManager.addTask;
-const deleteTask = TaskManager.deleteTask;
-const getTaskById = TaskManager.getTaskById;    
+import {assert} from 'chai';
+//const mocha = require('mocha');
+//var taskManager = require('../Prod/js/taskManager');
+import {TaskManager} from "../Prod/js/TaskManager.js";
 
-describe('TaskManager', () => {
-    describe('addTask', () => {
-        it('Calls addTask on TaskManager', () => {
-            const tracker = new assert.CallTracker();
-
-            function addTask(task) {}
-            const callsfunc = tracker.calls(addTask, 1);
-
-            callsfunc();
-            process.on('exit', () => {
-            tracker.verify();
-            });
-        });
+let tm = new TaskManager();
+let name = 'TN1';
+let desc = 'TD1';
+let assignedTo = 'AT1';
+let dueDate = '2020-10-10';
+let status = 'Todo';
+let idval ;
+describe('TaskManager', function() {
+  describe('Add Task Validation', function() {
+    it('All the new task features validation', function() {      
+      let task = tm.addTask(name,desc,assignedTo,dueDate,status);
+      idval = task.id;
+      //console.log(idval);
+      //assert.equal([1, 2, 3].indexOf(3), 2);
+      //console.log(task);
+      assert.equal(task.name,name);
+      assert.equal(task.description,desc);
+      assert.equal(task.assignedTo,assignedTo);
+      assert.equal(task.dueDate,dueDate);
+      assert.equal(task.status,status);
     });
-    describe('deleteTask', () => {
-        it('Calls deleteTask on TaskManager', () => {
-            const tracker = new assert.CallTracker();
-
-            function deleteTask(task) {}
-            const callsfunc = tracker.calls(deleteTask, 1);
-
-            callsfunc();
-            process.on('exit', () => {
-            tracker.verify();
-            });
-        });
+    it('Array length validation', function() {      
+      let len = tm.tasks.length;
+      assert.equal(len,1);
     });
-    describe('getTaskById', () => {
-        it('returns a task object with the given id', () => {
-            
-        });
+  });
+
+  describe('Get Task By Id Validation', function() {
+    it('Retrieve the newly created task validation', function() {      
+      let task = tm.getTaskById(0);
+      //idval = task.id;
+      //console.log(idval);
+      //assert.equal([1, 2, 3].indexOf(3), 2);
+      //console.log(task);
+      assert.equal(task.name,name);
+      assert.equal(task.description,desc);
+      assert.equal(task.assignedTo,assignedTo);
+      assert.equal(task.dueDate,dueDate);
+      assert.equal(task.status,status);
     });
+    it('Array length validation', function() {      
+      let len = tm.tasks.length;
+      assert.equal(len,1);
+    });
+  });
+
+  describe('Delete Task Validation', function() {
+    it('Array length validation', function() {      
+      tm.deleteTask(0);
+      let len = tm.tasks.length;
+      assert.equal(len,0);
+    });
+  });
+
 });
+
+
